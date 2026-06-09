@@ -2,9 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import { motion } from 'framer-motion'
 
-export function AnimatedCube() {
+export default function AnimatedCube() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -119,7 +118,6 @@ export function AnimatedCube() {
       if (containerRef.current && renderer.domElement.parentElement === containerRef.current) {
         containerRef.current.removeChild(renderer.domElement)
       }
-      geometry.dispose()
       renderer.dispose()
     }
   }, [])
